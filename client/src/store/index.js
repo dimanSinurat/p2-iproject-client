@@ -26,9 +26,15 @@ export default new Vuex.Store({
     facebook_login({commit}, payload){
       axios({
         method: POST,
-        url: '',
+        url: 'users/login/facebook',
         data : payload
       })
+        .then(data => {
+            console.log('masuk')
+        })
+        .catch(err => {
+          console.log(err.response.data)
+        })
     }
   },
   modules: {
